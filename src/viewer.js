@@ -156,10 +156,14 @@ export class Viewer {
   }
 
   stats(root) {
-    let tris = 0;
+    let tris = 0, verts = 0, meshes = 0;
     root.traverse((o) => {
-      if (o.isMesh) { const g = o.geometry; tris += (g.index ? g.index.count : g.attributes.position.count) / 3; }
+      if (o.isMesh) {
+        const g = o.geometry; meshes++;
+        verts += g.attributes.position.count;
+        tris += (g.index ? g.index.count : g.attributes.position.count) / 3;
+      }
     });
-    return { triangles: Math.round(tris), size: this.size, clips: this.clips };
+    return { triangles: Math.round(tris), vertices: verts, meshes, size: this.size, clips: this.clips };
   }
 }

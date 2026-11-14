@@ -27,7 +27,13 @@ async function run(promise, name) {
     say('');
     $('empty').classList.add('gone');
     const s = info.size;
-    $('info').innerHTML = `${info.triangles.toLocaleString()} triangles · ${s.x.toPrecision(3)} × ${s.y.toPrecision(3)} × ${s.z.toPrecision(3)}`;
+    const n = (v) => v.toLocaleString();
+    $('st-tris').textContent = n(info.triangles);
+    $('st-tris').title = info.triangles >= 1000 ? `${(info.triangles / 1000).toFixed(1)}k` : '';
+    $('st-verts').textContent = n(info.vertices);
+    $('st-meshes').textContent = n(info.meshes);
+    $('st-size').textContent = `${s.x.toPrecision(3)} × ${s.y.toPrecision(3)} × ${s.z.toPrecision(3)}`;
+    $('stats').hidden = false;
     const sel = $('anim-select');
     sel.hidden = !info.clips.length;
     sel.innerHTML = '<option value="-1">No animation</option>' +

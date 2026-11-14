@@ -44,7 +44,14 @@
           <button class="chip" id="opt-light" type="button" aria-pressed="false">Light bg</button>
           <button class="chip" id="btn-reset" type="button">Reset view</button>
         </div>
-        <div id="info"></div>
+        <div id="stats" hidden>
+          <div class="big"><b id="st-tris">0</b><span>triangles</span></div>
+          <dl>
+            <dt>Vertices</dt><dd id="st-verts"></dd>
+            <dt>Meshes</dt><dd id="st-meshes"></dd>
+            <dt>Size</dt><dd id="st-size"></dd>
+          </dl>
+        </div>
       </section>
       <div id="drop" hidden>Drop to view</div>
     </main>
