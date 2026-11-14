@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Model Viewer</title>
+</head>
+<body>
+  <header>
+    <div class="logo">◆ Model Viewer</div>
+    <span class="tag">GLB · GLTF · FBX · OBJ — files stay on your device</span>
+  </header>
+
+  <div id="layout">
+    <aside id="sidebar">
+      <label id="dropzone" for="file-input" tabindex="0">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L7 9m5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+        <strong>Drop a 3D file here</strong>
+        <span>or click to browse</span>
+        <small>Add .mtl, .bin and textures too if your model uses them</small>
+      </label>
+      <input id="file-input" type="file" multiple accept=".glb,.gltf,.fbx,.obj,.mtl,.bin,.png,.jpg,.jpeg,.webp" hidden />
+
+      <h2>Examples</h2>
+      <div id="demo-list" class="cards"><p class="hint">Loading…</p></div>
+    </aside>
+
+    <main id="stage">
+      <section id="pane-input" class="pane" hidden>
+        <div class="pane-label">Input image</div>
+        <img id="input-img" alt="Example input image" />
+      </section>
+      <section id="pane-3d" class="pane">
+        <div class="pane-label" id="label-3d">3D output</div>
+        <canvas id="canvas"></canvas>
+        <div id="empty">Pick an example or drop your own model</div>
+        <div id="status" hidden></div>
+        <div id="toolbar">
+          <select id="anim-select" title="Animation" hidden></select>
+          <button class="chip" id="opt-rotate" type="button" aria-pressed="false">Auto-rotate</button>
+          <button class="chip" id="opt-wire" type="button" aria-pressed="false">Wireframe</button>
+          <button class="chip on" id="opt-grid" type="button" aria-pressed="true">Grid</button>
+          <button class="chip" id="opt-light" type="button" aria-pressed="false">Light bg</button>
+          <button class="chip" id="btn-reset" type="button">Reset view</button>
+        </div>
+        <div id="info"></div>
+      </section>
+      <div id="drop" hidden>Drop to view</div>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

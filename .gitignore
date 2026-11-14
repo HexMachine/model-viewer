@@ -1,0 +1,5 @@
+node_modules
+dist
+public/models/manifest.json
+.DS_Store
+public/draco
