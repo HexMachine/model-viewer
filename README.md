@@ -1,3 +1,5 @@
+Copilot wrote the readme and like 99% of this is copy-paste. If it doesn't work, blame whatever generated this shit for the guy on reddit/stackoverflow
+
 # Model Viewer
 
 Static in-browser viewer for `.glb`, `.gltf`, `.fbx` and `.obj` (Three.js + Vite).
